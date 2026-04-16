@@ -36,7 +36,7 @@ navnathhtml/
    - **Environment**: `Node`
    - **Build Command**: `npm install`
    - **Start Command**: `node server/server.js`
-   - **Root Directory**: `navnathhtml` (if deploying from monorepo)
+   - **Root Directory**: `cclproject` (if deploying from monorepo)
 
 ### 1.3 Set Environment Variables on Render
 

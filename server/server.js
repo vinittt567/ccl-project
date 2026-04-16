@@ -19,7 +19,11 @@ app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
+    // Allow all configured origins and localhost for development
     if (corsOrigins.indexOf(origin) !== -1 || corsOrigins.includes('*')) {
+      callback(null, true);
+    } else if (process.env.NODE_ENV === 'production') {
+      // In production, allow any origin (frontend is served from same domain)
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
