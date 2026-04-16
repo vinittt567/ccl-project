@@ -10,29 +10,33 @@ import studentRoutes from './routes/student.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// CORS configuration - support multiple origins
-const corsOrigins = process.env.CORS_ORIGIN
-  ? process.env.CORS_ORIGIN.split(',').map(origin => origin.trim())
-  : ['http://localhost:5173', 'http://localhost:3000'];
+// CORS configuration
+console.log("CORS ORIGIN:", process.env.CORS_ORIGIN);
+
+const allowedOrigins = [
+  process.env.CORS_ORIGIN,
+  'http://localhost:5173',
+  'http://localhost:3000'
+].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
-    // Allow all configured origins and localhost for development
-    if (corsOrigins.indexOf(origin) !== -1 || corsOrigins.includes('*')) {
-      callback(null, true);
-    } else if (process.env.NODE_ENV === 'production') {
-      // In production, allow any origin (frontend is served from same domain)
+    // Allow configured origins
+    if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      console.log("Blocked CORS origin:", origin);
+      callback(null, false); // ✅ Don't throw error
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public'));
