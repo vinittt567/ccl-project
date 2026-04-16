@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:3000/api';
+// API Base URL - update this in config.js for production
+const API_BASE_URL = window.API_CONFIG?.BASE_URL || 'http://localhost:3000/api';
 
 function getAuthHeaders() {
   const token = localStorage.getItem('token');

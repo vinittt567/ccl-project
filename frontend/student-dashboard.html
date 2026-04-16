@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Dashboard - SSMS</title>
+  <title>Student Dashboard - SSMS</title>
   <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
   <div class="dashboard">
     <aside class="sidebar">
       <div class="logo">
-        <h2>SSMS Teacher</h2>
+        <h2>SSMS Student</h2>
       </div>
       <nav class="nav">
         <a href="#" class="nav-item active" data-page="dashboard">Dashboard</a>
-        <a href="#" class="nav-item" data-page="courses">My Courses</a>
+        <a href="#" class="nav-item" data-page="profile">My Profile</a>
         <a href="#" class="nav-item" data-page="attendance">Attendance</a>
+        <a href="#" class="nav-item" data-page="courses">Courses</a>
         <a href="#" class="nav-item" data-page="assignments">Assignments</a>
         <a href="#" class="nav-item" data-page="marks">Marks</a>
         <a href="#" class="nav-item" data-page="notifications">Notifications</a>
+        <a href="#" class="nav-item" data-page="feedback">Feedback</a>
       </nav>
       <div class="sidebar-footer">
         <button class="btn-logout" onclick="logout()">Logout</button>
@@ -36,12 +38,12 @@
       <div id="pageContent">
         <div class="stats-grid">
           <div class="stat-card">
-            <h3>My Courses</h3>
-            <p class="stat-number" id="myCourses">0</p>
+            <h3>Attendance</h3>
+            <p class="stat-number" id="attendancePercentage">0%</p>
           </div>
           <div class="stat-card">
-            <h3>Today's Classes</h3>
-            <p class="stat-number" id="todayClasses">0</p>
+            <h3>Total Classes</h3>
+            <p class="stat-number" id="totalClasses">0</p>
           </div>
           <div class="stat-card">
             <h3>Pending Assignments</h3>
@@ -52,8 +54,7 @@
     </main>
   </div>
 
-  <script src="/config.js"></script>
   <script src="/js/auth.js"></script>
-  <script src="/js/teacher.js"></script>
+  <script src="/js/student.js"></script>
 </body>
 </html>

@@ -1,17 +1,15 @@
 {
   "name": "ssms-backend",
-  "private": true,
   "version": "1.0.0",
+  "description": "SSMS Backend API - Smart Student Management System",
   "type": "module",
-  "description": "Smart Student Management System - Backend API",
   "main": "server/server.js",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
     "start": "node server/server.js",
-    "dev": "node --watch server/server.js",
-    "server": "node server/server.js"
+    "dev": "node --watch server/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

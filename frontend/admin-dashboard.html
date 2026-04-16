@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Dashboard - SSMS</title>
+  <title>Admin Dashboard - SSMS</title>
   <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
   <div class="dashboard">
     <aside class="sidebar">
       <div class="logo">
-        <h2>SSMS Teacher</h2>
+        <h2>SSMS Admin</h2>
       </div>
       <nav class="nav">
         <a href="#" class="nav-item active" data-page="dashboard">Dashboard</a>
-        <a href="#" class="nav-item" data-page="courses">My Courses</a>
-        <a href="#" class="nav-item" data-page="attendance">Attendance</a>
-        <a href="#" class="nav-item" data-page="assignments">Assignments</a>
-        <a href="#" class="nav-item" data-page="marks">Marks</a>
+        <a href="#" class="nav-item" data-page="users">Manage Users</a>
+        <a href="#" class="nav-item" data-page="students">Students</a>
+        <a href="#" class="nav-item" data-page="teachers">Teachers</a>
+        <a href="#" class="nav-item" data-page="courses">Courses</a>
+        <a href="#" class="nav-item" data-page="reports">Reports</a>
         <a href="#" class="nav-item" data-page="notifications">Notifications</a>
       </nav>
       <div class="sidebar-footer">
@@ -36,24 +37,27 @@
       <div id="pageContent">
         <div class="stats-grid">
           <div class="stat-card">
-            <h3>My Courses</h3>
-            <p class="stat-number" id="myCourses">0</p>
+            <h3>Total Students</h3>
+            <p class="stat-number" id="totalStudents">0</p>
           </div>
           <div class="stat-card">
-            <h3>Today's Classes</h3>
-            <p class="stat-number" id="todayClasses">0</p>
+            <h3>Total Teachers</h3>
+            <p class="stat-number" id="totalTeachers">0</p>
           </div>
           <div class="stat-card">
-            <h3>Pending Assignments</h3>
-            <p class="stat-number" id="pendingAssignments">0</p>
+            <h3>Total Courses</h3>
+            <p class="stat-number" id="totalCourses">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>Today's Attendance</h3>
+            <p class="stat-number" id="todayAttendance">0</p>
           </div>
         </div>
       </div>
     </main>
   </div>
 
-  <script src="/config.js"></script>
   <script src="/js/auth.js"></script>
-  <script src="/js/teacher.js"></script>
+  <script src="/js/admin.js"></script>
 </body>
 </html>
